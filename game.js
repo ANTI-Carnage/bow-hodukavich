@@ -1054,6 +1054,7 @@ function drawBoss(now) {
 }
 function drawWorld(now) {
   drawFloor();
+  drawWalls();
   for (const h of hazards) {
     const f = h.t / h.dur;
     ctx.fillStyle = `rgba(255,40,30,${0.12 + f * 0.2})`; ctx.beginPath(); ctx.arc(h.x, h.y, h.r, 0, TAU); ctx.fill();
@@ -1080,7 +1081,6 @@ function drawWorld(now) {
   }
   ctx.globalAlpha = 1;
   for (const dr of drones) drawDrone(dr, now);
-  drawWalls();
 }
 function drawLights(now) {
   const dk = theme.dark;
