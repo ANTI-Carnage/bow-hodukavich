@@ -20,7 +20,7 @@ function resize() {
   W = window.innerWidth; H = window.innerHeight;
   cvs.width = Math.round(W * DPR); cvs.height = Math.round(H * DPR);
   cvs.style.width = W + 'px'; cvs.style.height = H + 'px';
-  zoom = clamp(Math.min(W, H) / 560, 0.68, 1.25);
+  zoom = clamp(Math.min(W, H) / 470, 0.78, 1.5);
 }
 
 /* ---------------- sound ---------------- */
