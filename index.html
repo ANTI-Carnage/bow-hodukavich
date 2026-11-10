@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#14050f">
+<title>B.O.W.: Hodukavich</title>
+<meta name="description" content="You are the outbreak. Absorb scientists and soldiers, mutate, and break the military blockade. A free fan-made browser game.">
+<meta property="og:title" content="B.O.W.: Hodukavich">
+<meta property="og:description" content="You are the outbreak. Absorb, mutate, break the blockade.">
+<meta property="og:type" content="website">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="pad" class="hidden">
+  <button id="btnSpecial" class="pbtn sp" aria-label="Special">ROAR</button>
+  <button id="btnGrab" class="pbtn gr" aria-label="Grab">GRAB</button>
+  <button id="btnAttack" class="pbtn at" aria-label="Attack">LASH</button>
+</div>
+<div id="topBtns"><button id="pauseBtn" aria-label="Pause">II</button><button id="muteBtn" aria-label="Sound">&#128266;</button></div>
+
+<div id="title" class="overlay show">
+  <div class="card">
+    <div class="eyeart"><i></i></div>
+    <div class="logo"><span class="l1">B.O.W.</span><span class="l2">HODUKAVICH</span></div>
+    <p class="tag">You are the outbreak. Absorb. Mutate. Break the blockade.</p>
+    <button class="big" id="playBtn">MUTATE</button>
+    <p class="best">Best score: <b id="bestTitle">0</b></p>
+    <div class="howto">
+      <div class="row"><span class="k">Move</span><span id="hMove">WASD / arrows</span></div>
+      <div class="row"><span class="k">Tentacle lash</span><span id="hAtk">J or SPACE</span></div>
+      <div class="row"><span class="k">Tendril grab</span><span id="hGrab">K</span></div>
+      <div class="row"><span class="k">Eruption roar</span><span id="hSp">L (when MUTAGEN is full)</span></div>
+      <div class="row"><span class="k">Pause / sound</span><span>P &middot; M</span></div>
+    </div>
+    <div class="loot">
+      <div><i class="dot g"></i>Absorb scientists, or knock soldiers down first, then touch or grab them</div>
+      <div><i class="dot p"></i>Every body you absorb heals you and grows your mass</div>
+      <div><i class="dot b"></i>Dodge bullets, flames and drone strikes. Lash swats bullets away</div>
+    </div>
+    <p class="fan">Unofficial fan game. Not affiliated with Capcom.</p>
+  </div>
+</div>
+
+<div id="pause" class="overlay">
+  <div class="card small">
+    <h2>PAUSED</h2>
+    <button class="big" id="resumeBtn">RESUME</button>
+    <button class="ghost" id="quitBtn">QUIT TO TITLE</button>
+  </div>
+</div>
+
+<div id="evolve" class="overlay">
+  <div class="card">
+    <h2 class="green" id="evoTitle">MUTATION THRESHOLD</h2>
+    <p id="evoStats"></p>
+    <p class="pick">Choose an evolution</p>
+    <div id="evoCards"></div>
+  </div>
+</div>
+
+<div id="over" class="overlay">
+  <div class="card small">
+    <h2 class="red">CONTAINED</h2>
+    <p id="overStats"></p>
+    <p id="newBest" class="badge hidden">NEW BEST!</p>
+    <button class="big" id="againBtn">MUTATE AGAIN</button>
+    <button class="ghost" id="titleBtn">TITLE</button>
+  </div>
+</div>
+
+<div id="win" class="overlay">
+  <div class="card small">
+    <div class="eyeart"><i></i></div>
+    <h2 class="gold">APEX ORGANISM</h2>
+    <p id="winStats"></p>
+    <button class="big" id="keepBtn">KEEP MUTATING</button>
+    <button class="ghost" id="winAgainBtn">NEW GAME</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
